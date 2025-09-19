@@ -2,6 +2,7 @@ type ReactAnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 type ReactButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonWhatsAppProps = ReactAnchorProps
+export type CarouselNavigationButtonProps = ReactButtonProps
 
 export interface ButtonOutlineProps extends ReactAnchorProps {
   children: React.ReactNode
