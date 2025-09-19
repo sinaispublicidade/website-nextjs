@@ -1,0 +1,5 @@
+export * from './clients.mock'
+export * from './portfolio.mock'
+export * from './services.mock'
+export * from './testimonials.mock'
+export * from './banner-service.mock'
