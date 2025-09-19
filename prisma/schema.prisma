@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model HomeContact {
+  id        String   @id @default(uuid())
+  nome      String
+  email     String
+  telefone  String
+  empresa   String
+  cargo     String
+  mensagem  String
+  createdAt DateTime @default(now())
+
+  @@map("form_home")
+}
+
+model AboutContact {
+  id           String   @id @default(uuid())
+  nome         String
+  email        String
+  telefone     String
+  siteAtual    String   @map("site_atual")
+  tipoServico  String   @map("tipo_servico")
+  tiporRetorno String?  @map("tipo_retorno")
+  createdAt    DateTime @default(now())
+
+  @@map("form_about")
+}
+
+model AdsContact {
+  id           String   @id @default(uuid())
+  nome         String
+  email        String
+  telefone     String
+  faturamento  String
+  tipoServico  String   @map("tipo_servico")
+  tiporRetorno String?  @map("tipo_retorno")
+  createdAt    DateTime @default(now())
+
+  @@map("form_ads")
+}
