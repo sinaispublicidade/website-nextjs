@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Stats: React.FC = () => (
   <section className="bg-black">
-    <div className="container mx-auto grid grid-cols-1 gap-8 p-20 lg:grid-cols-4">
+    <div className="container mx-auto grid grid-cols-1 gap-8 px-6 py-11 md:py-20 lg:grid-cols-4">
       <div className="col-span-1 lg:col-span-2 lg:pr-20">
         <h3 className="text-3xl font-bold sm:text-[40px]">
           <strong className="text-sinais-blue font-bold">SINAIS:</strong> com
