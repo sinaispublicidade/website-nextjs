@@ -1,0 +1,72 @@
+import { BannerHero } from '@/components/Common/BannerHero'
+import { Forms } from '@/components/Forms'
+import { Feature } from '@/components/Features'
+import { Button } from '@/components/ui/Button'
+import { Banner } from '@/components/Banners'
+
+export default function Page() {
+  const pathname = '/assets/services/marketing-para-varejo'
+
+  return (
+    <>
+      <BannerHero />
+
+      <div className="bg-sinais-blue sm:px-6 sm:py-11 md:py-20">
+        <div className="container mx-auto grid items-center sm:gap-6 lg:grid-cols-2 lg:gap-10">
+          <div className="px-6 py-10 sm:py-0">
+            <p className="text-2xl font-bold sm:text-3xl md:text-[40px]">
+              Nosso marketing para varejo é construído para gerar impacto
+              imediato e sustentável, colocando sua marca sempre à frente da
+              concorrência.
+            </p>
+          </div>
+          <Forms.About />
+        </div>
+      </div>
+
+      <div className="mx-auto grid max-w-sm gap-4 px-6 py-11 sm:container sm:grid-cols-2 md:py-20 lg:grid-cols-4">
+        <div className="col-span-full mb-4 md:mb-8">
+          <h2 className="mx-auto max-w-[800px] text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
+            Organize seu fluxo de leads através de um{' '}
+            <span className="text-sinais-blue">CRM integrado</span>:
+          </h2>
+        </div>
+
+        <Feature.Service
+          image={`${pathname}/icon-01.svg`}
+          title="Criamos campanhas integradas"
+          text="Campanhas e estratégias que conectam digital e físico."
+        />
+        <Feature.Service
+          image={`${pathname}/icon-02.svg`}
+          title="Criamos atração de clientes"
+          text="Sua empresa com mais fluxo na loja e mais visitas no site."
+        />
+        <Feature.Service
+          image={`${pathname}/icon-03.svg`}
+          title="Ofertas direcionadas para seu público"
+          text="Segmentação inteligente para alcançar o público certo."
+        />
+        <Feature.Service
+          image={`${pathname}/icon-04.svg`}
+          title="Conquiste um aumento de vendas"
+          text="Resultados mensuráveis em todas as ações realizadas."
+        />
+        <div className="col-span-full mt-4 text-center md:mt-8">
+          <Button.Outline
+            className="btn-sinais-blue mx-auto"
+            href="/orcamento"
+            plusIcon
+          >
+            Fale agora com um especialista!
+          </Button.Outline>
+        </div>
+      </div>
+
+      <Banner.Service.CTA
+        title="Mais visibilidade, mais clientes, mais vendas."
+        text="Do online ao ponto físico, desenvolvemos campanhas personalizadas para potencializar o varejo em todos os canais."
+      />
+    </>
+  )
+}
