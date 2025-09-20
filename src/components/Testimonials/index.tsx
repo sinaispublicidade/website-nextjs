@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
@@ -10,9 +11,7 @@ import { NextButton, PrevButton } from './Nav'
 
 export const Testimonials: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
-  const [testimonials, _setTestimonials] = useState(
-    testimonialsMock as typeof testimonialsMock
-  )
+  const [testimonials] = useState(testimonialsMock as typeof testimonialsMock)
 
   const {
     prevBtnDisabled,
@@ -35,22 +34,22 @@ export const Testimonials: React.FC = () => {
         <div className="embla relative mt-12 px-0 md:px-12">
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
-              {testimonials.map((testimonial, idx) => (
+              {testimonials.map(({ author, image, role, text }, idx) => (
                 <div
                   className="embla__slide flex flex-col gap-6 select-none md:flex-row"
                   key={idx}
                 >
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.author}
+                  <Image
+                    src={image}
+                    alt={author}
+                    width={200}
+                    height={200}
                     className="mx-auto mb-4 size-32 rounded-full object-cover md:size-40 xl:size-48"
                   />
                   <blockquote className="text-center md:text-left lg:pt-6">
-                    <p className="mb-8 text-xl italic">{testimonial.text}</p>
-                    <p className="text-xl font-semibold">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-lg">{testimonial.role}</p>
+                    <p className="mb-8 text-xl italic">{text}</p>
+                    <p className="text-xl font-semibold">{author}</p>
+                    <p className="text-lg">{role}</p>
                   </blockquote>
                 </div>
               ))}
