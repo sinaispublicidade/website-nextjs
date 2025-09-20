@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --whatsapp: #5CDE35;
+  --sinais-blue: #027BFF;
+  --sinais-darkblue: #00356F;
+  --sinais-black: #100F0C;
+  --sinais-error: #FF0F00;
+  --pulse-shadow: pulse-shadow 2s ease-in-out infinite;
+  --pulse-shadow-whatsapp: pulse-shadow-whatsapp 2s ease-in-out infinite;
+  --pulse-shadow-sinais-blue: pulse-shadow-sinais-blue 2s ease-in-out infinite;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-whatsapp: var(--whatsapp);
+  --color-sinais-blue: var(--sinais-blue);
+  --color-sinais-darkblue: var(--sinais-darkblue);
+  --color-sinais-black: var(--sinais-black);
+  --color-sinais-error: var(--sinais-error);
+  --font-sans: var(--font-helvetica);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #FFFFFF;
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@keyframes pulse-shadow-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(92, 222, 53, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@keyframes pulse-shadow-sinais-blue {
+  0% {
+    box-shadow: 0 0 0 0 rgba(2, 123, 255, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.btn-whatsapp {
+  @apply bg-whatsapp hover:bg-whatsapp/80 text-white;
+  @apply w-fit flex items-center gap-3 rounded-xl py-3 pr-6 pl-8 font-medium transition-all focus:outline-none relative;
+  animation: pulse-shadow-whatsapp 2s infinite;
+}
+
+.btn-submit-base {
+  @apply bg-black text-white;
+  @apply cursor-pointer rounded-xl px-12 py-3 font-medium transition-colors duration-300;
+  @apply hover:bg-white hover:text-black;
+}
+
+.btn-submit {
+  @apply bg-black text-white;
+  @apply cursor-pointer rounded-xl px-12 py-3 font-medium transition-colors duration-300;
+  @apply hover:bg-white hover:text-black;
+}
+
+.btn-submit-invert {
+  @apply bg-white text-black;
+  @apply cursor-pointer rounded-xl px-12 py-3 font-medium transition-colors duration-300;
+  @apply hover:bg-black hover:text-white;
+}
+
+.btn-outline-base {
+  @apply w-fit flex items-center rounded-xl px-9 border-1 font-medium transition-colors;
+  @apply hover:bg-white hover:text-black hover:border-white;
+}
+
+.btn-sinais-blue {
+  @apply bg-sinais-blue border-sinais-blue;
+  animation: pulse-shadow-sinais-blue 2s infinite;
+}
+
+.embla__viewport {
+  @apply mx-auto max-w-4xl;
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 100%;
+  min-width: 0;
+  padding-inline: 0.5rem;
 }
