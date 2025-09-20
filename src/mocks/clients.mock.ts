@@ -1,20 +1,25 @@
-export const clients: Record<string, string> = {
-  bauminas: '/assets/clients/logo-bauminas.svg',
-  panobianco: '/assets/clients/logo-panobianco.svg',
-  btw: '/assets/clients/logo-btw.svg',
-  mira: '/assets/clients/logo-mira.svg',
-  adere: '/assets/clients/logo-adere.svg',
-  neriah: '/assets/clients/logo-neriah.svg',
-  automec: '/assets/clients/logo-automec.svg',
-  leveAsset: '/assets/clients/logo-leve-asset.svg',
-  igui: '/assets/clients/logo-igui.svg',
-  feiraBorracha: '/assets/clients/logo-feira-da-borracha.svg',
-  marigold: '/assets/clients/logo-marigold.svg',
-  hidroazul: '/assets/clients/logo-hidroazul.svg',
-  lemon: '/assets/clients/logo-lemon.svg',
-  flow: '/assets/clients/logo-flow.svg',
-  rfFamllia: '/assets/clients/logo-rf-famllia.svg',
-  brazzo: '/assets/clients/logo-brazzo.svg',
-  schlegel: '/assets/clients/logo-schlegel.svg',
-  sobrapar: '/assets/clients/logo-sobrapar.png',
+interface IClient {
+  key: string
+  src: string
 }
+
+export const clients: IClient[] = [
+  { key: 'bauminas', src: '/assets/clients/logo-bauminas.svg' },
+  { key: 'panobianco', src: '/assets/clients/logo-panobianco.svg' },
+  { key: 'btw', src: '/assets/clients/logo-btw.svg' },
+  { key: 'mira', src: '/assets/clients/logo-mira.svg' },
+  { key: 'adere', src: '/assets/clients/logo-adere.svg' },
+  { key: 'neriah', src: '/assets/clients/logo-neriah.svg' },
+  { key: 'automec', src: '/assets/clients/logo-automec.svg' },
+  { key: 'leveAsset', src: '/assets/clients/logo-leve-asset.svg' },
+  { key: 'igui', src: '/assets/clients/logo-igui.svg' },
+  { key: 'feiraBorracha', src: '/assets/clients/logo-feira-da-borracha.svg' },
+  { key: 'marigold', src: '/assets/clients/logo-marigold.svg' },
+  { key: 'hidroazul', src: '/assets/clients/logo-hidroazul.svg' },
+  { key: 'lemon', src: '/assets/clients/logo-lemon.svg' },
+  { key: 'flow', src: '/assets/clients/logo-flow.svg' },
+  { key: 'rfFamllia', src: '/assets/clients/logo-rf-famllia.svg' },
+  { key: 'brazzo', src: '/assets/clients/logo-brazzo.svg' },
+  { key: 'schlegel', src: '/assets/clients/logo-schlegel.svg' },
+  { key: 'sobrapar', src: '/assets/clients/logo-sobrapar.png' },
+]
