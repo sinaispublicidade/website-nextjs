@@ -1,55 +1,49 @@
 'use server'
-import { PrismaClient } from '@prisma/client'
+import { Forms } from '@/types'
 
-import { AboutFormData, AdsFormData, HomeFormData } from '@/types'
+import prisma from '@/lib/prisma'
 
 import { AboutFormSchema } from '@/schemas/forms/about.schema'
 import { AdsFormSchema } from '@/schemas/forms/ads.schema'
 import { HomeFormSchema } from '@/schemas/forms/home.schema'
 
-const prisma = new PrismaClient()
-
-type HandleFormParams<T> = {
-  schema: { safeParse: (data: unknown) => { success: boolean } }
-  prismaModel: { create: (args: { data: T }) => Promise<unknown> }
-  data: T
-}
-
 async function handleForm<T>({
   schema,
   prismaModel,
   data,
-}: HandleFormParams<T>) {
+}: Forms.Handle.Params<T>): Promise<Forms.Handle.Result> {
   const validatedFields = schema.safeParse(data)
 
   if (!validatedFields.success) throw new Error('Campos obrigatórios ausentes.')
 
   try {
-    await prismaModel.create({ data })
-    return true
+    const result = await prismaModel.create({ data }) as { id: string }
+    return { id: result.id }
   } catch (error) {
-    return { message: 'Ocorreu um erro! Tente novamente.', error }
+    throw new Error('Ocorreu um erro! Tente novamente.')
+  } finally {
+    await prisma.$disconnect()
   }
 }
 
-export async function handleHomeForm(data: HomeFormData) {
-  return handleForm<HomeFormData>({
+export async function handleHomeForm(data: Forms.Data.Home) {
+  return handleForm<Forms.Data.Home>({
     schema: HomeFormSchema,
     prismaModel: prisma.homeContact,
     data,
   })
 }
 
-export async function handleAboutForm(data: AboutFormData) {
-  return handleForm<AboutFormData>({
+export async function handleAboutForm(data: Forms.Data.About) {
+  return handleForm<Forms.Data.About>({
     schema: AboutFormSchema,
     prismaModel: prisma.aboutContact,
     data,
   })
 }
 
-export async function handleAdsForm(data: AdsFormData) {
-  return handleForm<AdsFormData>({
+export async function handleAdsForm(data: Forms.Data.Ads) {
+  return handleForm<Forms.Data.Ads>({
     schema: AdsFormSchema,
     prismaModel: prisma.adsContact,
     data,
