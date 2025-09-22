@@ -23,9 +23,7 @@ export default function RootLayout({
       <body className={cn(fonts.HelveticaNeue.variable, 'antialiased')}>
         <Header />
 
-        <main className="min-h-screen w-full font-sans text-white">
-          {children}
-        </main>
+        <main className="w-full font-sans text-white">{children}</main>
 
         <Footer />
       </body>
