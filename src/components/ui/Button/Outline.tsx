@@ -1,40 +1,29 @@
 import React from 'react'
+import { FaPlus } from 'react-icons/fa'
 import Link from 'next/link'
 
-import { ButtonOutlineProps } from '@/types'
+import { Button } from '@/types'
 
 import { cn } from '@/lib/utils'
+import { BUTTON_STYLES } from '@/styles'
 
-export const ButtonOutline: React.FC<ButtonOutlineProps> = ({
+export const ButtonOutline: React.FC<Button.Outline> = ({
   href = '#',
-  variant = 'default',
   children,
   plusIcon,
   className,
   ...props
 }) => {
-  const sizeClass = variant === 'lg' ? 'py-5' : 'py-3'
-  const combinedClassName = cn('btn-outline-base', sizeClass, className)
+  const combinedClassName = cn(
+    BUTTON_STYLES.BASE,
+    BUTTON_STYLES.OUTLINE,
+    className
+  )
 
   return (
     <Link href={href} className={combinedClassName} {...props}>
       {children}
-      {plusIcon && (
-        <svg
-          className="-mr-2 ml-3 size-3"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={6}
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 4v16m8-8H4"
-          />
-        </svg>
-      )}
+      {plusIcon && <FaPlus className="-mr-2 ml-3 size-3" size={12} />}
     </Link>
   )
 }

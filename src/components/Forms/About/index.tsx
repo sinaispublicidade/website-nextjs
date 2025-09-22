@@ -79,10 +79,9 @@ export const AboutForm: React.FC = () => {
       <div className="text-center sm:mt-4">
         <Button.Submit
           type="submit"
-          className="w-full sm:w-auto"
+          className="mx-auto w-full sm:w-auto"
           isSending={isSubmitting}
           disabled={isSubmitting}
-          invert
         >
           Solicitar contato
         </Button.Submit>

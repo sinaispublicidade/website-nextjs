@@ -1,3 +1,5 @@
+import { BUTTON_STYLES } from '@/styles'
+
 import { BannerHero } from '@/components/Common/BannerHero'
 import { Forms } from '@/components/Forms'
 import { Portfolio } from '@/components/Portfolio'
@@ -57,7 +59,7 @@ export default function Page() {
         />
         <div className="col-span-full mt-4 text-center md:mt-8">
           <Button.Outline
-            className="btn-sinais-blue mx-auto"
+            className={BUTTON_STYLES.BLUE}
             href="/orcamento"
             plusIcon
           >
