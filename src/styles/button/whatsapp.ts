@@ -1,0 +1,18 @@
+export const WHATSAPP_BUTTON_STYLES = [
+  'bg-whatsapp',
+  'hover:bg-whatsapp/80',
+  'w-fit',
+  'flex',
+  'items-center',
+  'gap-3',
+  'rounded-xl',
+  'py-3',
+  'pr-6',
+  'pl-8',
+  'font-medium',
+  'transition-all',
+  'text-white',
+  'focus:outline-none',
+  'relative',
+  'animate-(--pulse-shadow-whatsapp)',
+].join(' ')

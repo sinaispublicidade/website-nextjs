@@ -73,40 +73,6 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-.btn-whatsapp {
-  @apply bg-whatsapp hover:bg-whatsapp/80 text-white;
-  @apply w-fit flex items-center gap-3 rounded-xl py-3 pr-6 pl-8 font-medium transition-all focus:outline-none relative;
-  animation: pulse-shadow-whatsapp 2s infinite;
-}
-
-.btn-submit-base {
-  @apply bg-black text-white;
-  @apply cursor-pointer rounded-xl px-12 py-3 font-medium transition-colors duration-300;
-  @apply hover:bg-white hover:text-black;
-}
-
-.btn-submit {
-  @apply bg-black text-white;
-  @apply cursor-pointer rounded-xl px-12 py-3 font-medium transition-colors duration-300;
-  @apply hover:bg-white hover:text-black;
-}
-
-.btn-submit-invert {
-  @apply bg-white text-black;
-  @apply cursor-pointer rounded-xl px-12 py-3 font-medium transition-colors duration-300;
-  @apply hover:bg-black hover:text-white;
-}
-
-.btn-outline-base {
-  @apply w-fit flex items-center rounded-xl px-9 border-1 font-medium transition-colors;
-  @apply hover:bg-white hover:text-black hover:border-white;
-}
-
-.btn-sinais-blue {
-  @apply bg-sinais-blue border-sinais-blue;
-  animation: pulse-shadow-sinais-blue 2s infinite;
-}
-
 .embla__viewport {
   @apply mx-auto max-w-4xl;
   overflow: hidden;

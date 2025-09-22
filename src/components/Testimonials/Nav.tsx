@@ -1,9 +1,9 @@
 import React from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
-import { CarouselNavigationButtonProps } from '@/types'
+import { Button } from '@/types'
 
-export const PrevButton: React.FC<CarouselNavigationButtonProps> = ({
+export const PrevButton: React.FC<Button.CarouselNavigation> = ({
   ...restProps
 }) => (
   <button
@@ -16,7 +16,7 @@ export const PrevButton: React.FC<CarouselNavigationButtonProps> = ({
   </button>
 )
 
-export const NextButton: React.FC<CarouselNavigationButtonProps> = ({
+export const NextButton: React.FC<Button.CarouselNavigation> = ({
   ...restProps
 }) => (
   <button

@@ -1,16 +1,17 @@
 import { ReactProps } from '../react'
 
-export type ButtonWhatsAppProps = ReactProps.Anchor
-export type CarouselNavigationButtonProps = ReactProps.Button
+export declare namespace Button {
+  type WhatsApp = ReactProps.Anchor
+  type CarouselNavigation = ReactProps.Button
 
-export interface ButtonOutlineProps extends ReactProps.Anchor {
-  children: React.ReactNode
-  plusIcon?: boolean
-  variant?: 'default' | 'lg'
-}
+  interface Outline extends ReactProps.Anchor {
+    children: React.ReactNode
+    plusIcon?: boolean
+  }
 
-export interface ButtonSubmitProps extends ReactProps.Button {
-  children: React.ReactNode
-  isSending?: boolean
-  invert?: boolean
+  interface Submit extends ReactProps.Button {
+    children: React.ReactNode
+    isSending?: boolean
+    invert?: boolean
+  }
 }

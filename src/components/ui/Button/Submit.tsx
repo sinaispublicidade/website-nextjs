@@ -1,19 +1,26 @@
 import React from 'react'
 
-import { ButtonSubmitProps } from '@/types'
+import { Button } from '@/types'
 
 import { cn } from '@/lib/utils'
+import { BUTTON_STYLES } from '@/styles'
 
-export const ButtonSubmit: React.FC<ButtonSubmitProps> = ({
+export const ButtonSubmit: React.FC<Button.Submit> = ({
   children,
   className,
   isSending = false,
   invert = false,
   ...props
 }) => {
-  const buttonClass = invert ? 'btn-submit-invert' : 'btn-submit'
+  const combinedClassName = cn(
+    BUTTON_STYLES.BASE,
+    invert ? BUTTON_STYLES.BLACK : BUTTON_STYLES.WHITE,
+    'px-12',
+    className
+  )
+
   return (
-    <button type="submit" className={cn(buttonClass, className)} {...props}>
+    <button type="submit" className={combinedClassName} {...props}>
       {isSending ? 'Enviando...' : children}
     </button>
   )
