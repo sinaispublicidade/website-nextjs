@@ -1,16 +1,15 @@
-type ReactAnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
-type ReactButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+import { ReactProps } from '../react'
 
-export type ButtonWhatsAppProps = ReactAnchorProps
-export type CarouselNavigationButtonProps = ReactButtonProps
+export type ButtonWhatsAppProps = ReactProps.Anchor
+export type CarouselNavigationButtonProps = ReactProps.Button
 
-export interface ButtonOutlineProps extends ReactAnchorProps {
+export interface ButtonOutlineProps extends ReactProps.Anchor {
   children: React.ReactNode
   plusIcon?: boolean
   variant?: 'default' | 'lg'
 }
 
-export interface ButtonSubmitProps extends ReactButtonProps {
+export interface ButtonSubmitProps extends ReactProps.Button {
   children: React.ReactNode
   isSending?: boolean
   invert?: boolean

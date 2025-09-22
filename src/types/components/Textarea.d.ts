@@ -1,8 +1,7 @@
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
+import { ReactProps } from '../react'
 
-type ReactTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
-
-export interface TextareaProps extends ReactTextareaProps {
+export interface TextareaProps extends ReactProps.Textarea {
   label?: string
   error?: FieldError
   registration: UseFormRegisterReturn
