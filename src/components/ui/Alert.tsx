@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
+import { ReactProps } from '@/types'
+
 import { cn } from '@/lib/utils'
 
-type ReactDivProps = React.HTMLAttributes<HTMLDivElement>
-
-interface AlertProps extends ReactDivProps {
+interface AlertProps extends ReactProps.Div {
   type?: 'success' | 'error'
   timeout?: number
 }
