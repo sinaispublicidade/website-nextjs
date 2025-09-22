@@ -2,7 +2,7 @@
 import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { AboutFormData, SubmitStatus } from '@/types'
+import { Forms } from '@/types'
 
 import { AboutFormResolver } from '@/schemas/forms/about.schema'
 import { handleAboutForm } from '@/app/actions'
@@ -12,18 +12,18 @@ import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 
 export const AboutForm: React.FC = () => {
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null)
+  const [submitStatus, setSubmitStatus] = useState<Forms.SubmitStatus>(null)
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<AboutFormData>({
+  } = useForm<Forms.Data.About>({
     resolver: AboutFormResolver,
   })
 
   const onSubmit = useCallback(
-    async (data: AboutFormData) => {
+    async (data: Forms.Data.About) => {
       setSubmitStatus(null)
 
       try {
@@ -35,7 +35,7 @@ export const AboutForm: React.FC = () => {
         console.error(error)
       }
     },
-    [reset, setSubmitStatus, handleAboutForm]
+    [reset, setSubmitStatus]
   )
 
   return (

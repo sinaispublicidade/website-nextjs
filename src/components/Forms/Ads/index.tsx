@@ -2,7 +2,7 @@
 import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { AdsFormData, SubmitStatus } from '@/types'
+import { Forms } from '@/types'
 
 import { AdsFormResolver } from '@/schemas/forms/ads.schema'
 import { handleAdsForm } from '@/app/actions'
@@ -12,18 +12,18 @@ import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 
 export const AdsForm: React.FC = () => {
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null)
+  const [submitStatus, setSubmitStatus] = useState<Forms.SubmitStatus>(null)
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<AdsFormData>({
+  } = useForm<Forms.Data.Ads>({
     resolver: AdsFormResolver,
   })
 
   const onSubmit = useCallback(
-    async (data: AdsFormData) => {
+    async (data: Forms.Data.Ads) => {
       setSubmitStatus(null)
 
       try {
@@ -35,7 +35,7 @@ export const AdsForm: React.FC = () => {
         console.error(error)
       }
     },
-    [reset, setSubmitStatus, handleAdsForm]
+    [reset, setSubmitStatus]
   )
 
   return (
