@@ -18,16 +18,19 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "postinstall": "prisma generate && prisma migrate deploy",
+    "prisma:generate": "prisma generate",
+    "prisma:deploy": "prisma migrate deploy",
+    "postinstall": "pnpm prisma:generate && pnpm prisma:deploy",
     "studio": "prisma studio",
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm prisma:generate && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@prisma/client": "^6.16.2",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^6.16.2",
     "clsx": "^2.1.1",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
