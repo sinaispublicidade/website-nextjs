@@ -14,7 +14,7 @@ export const NavDesktop: React.FC = () => {
             Nossas soluções
           </NavLink>
 
-          <ul className="bg-background pointer-events-none absolute top-full left-0 z-10 w-56 py-2 opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+          <ul className="bg-background pointer-events-none absolute top-full left-0 z-10 w-60 py-2 opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
             {services.map(({ key, title, link }) => (
               <li key={key}>
                 <NavLink href={link}>{title}</NavLink>
