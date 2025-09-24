@@ -17,9 +17,10 @@ async function handleForm<T>({
   if (!validatedFields.success) throw new Error('Campos obrigatórios ausentes.')
 
   try {
-    const result = await prismaModel.create({ data }) as { id: string }
+    const result = (await prismaModel.create({ data })) as { id: string }
     return { id: result.id }
   } catch (error) {
+    console.error(error)
     throw new Error('Ocorreu um erro! Tente novamente.')
   } finally {
     await prisma.$disconnect()
