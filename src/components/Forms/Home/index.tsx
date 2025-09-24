@@ -102,7 +102,6 @@ export const HomeForm: React.FC = () => {
           <div className="text-center sm:col-span-full sm:mt-8">
             <Button.Submit
               type="submit"
-              className="w-full sm:w-auto"
               isSending={isSubmitting}
               disabled={isSubmitting}
               invert

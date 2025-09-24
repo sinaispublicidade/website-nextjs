@@ -15,7 +15,7 @@ export const ButtonSubmit: React.FC<Button.Submit> = ({
   const combinedClassName = cn(
     BUTTON_STYLES.BASE,
     invert ? BUTTON_STYLES.BLACK : BUTTON_STYLES.WHITE,
-    'px-12',
+    'mx-auto block w-full px-12 sm:w-auto',
     className
   )
 
