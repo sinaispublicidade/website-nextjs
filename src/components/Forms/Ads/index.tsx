@@ -79,7 +79,6 @@ export const AdsForm: React.FC = () => {
       <div className="text-center sm:mt-4">
         <Button.Submit
           type="submit"
-          className="mx-auto w-full sm:w-auto"
           isSending={isSubmitting}
           disabled={isSubmitting}
         >
