@@ -6,33 +6,48 @@ export interface IPortfolio {
 
 export const portfolio: IPortfolio[] = [
   {
-    name: 'Project Alpha',
-    image: '/images/alpha.png',
-    link: 'https://example.com/alpha',
+    name: 'Projeto 1',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_2.png',
+    link: '#',
   },
   {
-    name: 'Project Beta',
-    image: '/images/beta.png',
-    link: 'https://example.com/beta',
+    name: 'Projeto 2',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_3.png',
+    link: '#',
   },
   {
-    name: 'Project Gamma',
-    image: '/images/gamma.png',
-    link: 'https://example.com/gamma',
+    name: 'Projeto 3',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_4.png',
+    link: '#',
   },
   {
-    name: 'Project Alpha',
-    image: '/images/alpha.png',
-    link: 'https://example.com/alpha',
+    name: 'Projeto 4',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_5.png',
+    link: '#',
   },
   {
-    name: 'Project Beta',
-    image: '/images/beta.png',
-    link: 'https://example.com/beta',
+    name: 'Projeto 5',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_7.png',
+    link: '#',
   },
   {
-    name: 'Project Gamma',
-    image: '/images/gamma.png',
-    link: 'https://example.com/gamma',
+    name: 'Projeto 6',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_9.png',
+    link: '#',
+  },
+  {
+    name: 'Projeto 7',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_10.png',
+    link: '#',
+  },
+  {
+    name: 'Projeto 8',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_11.png',
+    link: '#',
+  },
+  {
+    name: 'Projeto 9',
+    image: '/assets/portfolio/9978A_Portfólio_Sinais_2_13.png',
+    link: '#',
   },
 ]
