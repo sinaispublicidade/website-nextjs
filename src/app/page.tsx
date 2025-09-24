@@ -24,7 +24,7 @@ export default function Home() {
           feitos pela SINAIS:
         </h2>
 
-        <Portfolio className="-mx-6 mt-9 md:mt-11" />
+        <Portfolio className="-mx-6 mt-9 md:mt-11" quantity={9} />
       </section>
 
       <Testimonials />
