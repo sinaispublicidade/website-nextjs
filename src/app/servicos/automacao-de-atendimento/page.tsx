@@ -65,7 +65,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Banner.Service.CTA
+      <Banner.Service.CTA.Background
         title="Mais tempo para sua equipe, melhor atendimento para seus clientes"
         text="Automatizar é reduzir falhas humanas, agilizar demandas e manter a qualidade do relacionamento."
         image="/assets/banners/banner-hero--services-cta--automacao-de-atendimento.png"

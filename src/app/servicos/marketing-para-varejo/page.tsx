@@ -65,7 +65,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Banner.Service.CTA
+      <Banner.Service.CTA.Background
         title="Mais visibilidade, mais clientes, mais vendas."
         text="Do online ao ponto físico, desenvolvemos campanhas personalizadas para potencializar o varejo em todos os canais."
         image="/assets/banners/banner-hero--services-cta--marketing-para-varejo.png"

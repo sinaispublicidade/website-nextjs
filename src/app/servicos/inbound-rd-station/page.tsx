@@ -75,7 +75,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Banner.Service.CTA
+      <Banner.Service.CTA.Background
         title="Venda mais com processos inteligentes e automatizados"
         text="Com a automação, sua equipe ganha eficiência, reduz custos e aumenta a previsibilidade de resultados."
         image="/assets/banners/banner-hero--services-cta--inbound-rd.png"
