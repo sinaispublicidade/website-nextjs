@@ -65,7 +65,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Banner.Service.CTA
+      <Banner.Service.CTA.Background
         title="Transforme seus seguidores em clientes fiéis"
         text="Com uma gestão inteligente, sua empresa passa a se comunicar de forma estratégica, criando autoridade no mercado e gerando resultados reais."
         image="/assets/banners/banner-hero--services-cta--redes-sociais.png"

@@ -2,7 +2,7 @@ import { BUTTON_STYLES } from '@/styles'
 
 import { BannerHero } from '@/components/Common/BannerHero'
 import { Forms } from '@/components/Forms'
-import { Portfolio } from '@/components/Portfolio'
+import { Banner } from '@/components/Banners'
 import { Feature } from '@/components/Features'
 import { Button } from '@/components/ui/Button'
 
@@ -65,10 +65,11 @@ export default function Page() {
         </div>
       </div>
 
-      <h2 className="px-6 py-11 text-center text-2xl font-bold sm:text-3xl md:py-20 md:text-[40px]">
-        Veja alguns sites criados por nós:
-      </h2>
-      <Portfolio />
+      <Banner.Service.CTA.Image
+        title="Transforme contatos em clientes com estratégias inteligentes"
+        desc="O CRM permite que sua equipe tenha uma visão clara de cada etapa da jornada do cliente, otimizando o atendimento e acelerando o fechamento de negócios."
+        img="/assets/banners/banner-hero--service-cta-footer--Influencer Marketing.png"
+      />
     </>
   )
 }
