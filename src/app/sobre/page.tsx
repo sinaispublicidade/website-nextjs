@@ -29,7 +29,7 @@ export default function About() {
         />
         <div className="col-span-full mt-4 text-center">
           <Button.Outline
-            className="btn-sinais-blue mx-auto"
+            className="bg-sinais-blue border-sinais-blue mx-auto animate-(--pulse-shadow-sinais-blue)"
             href="/orcamento"
             plusIcon
           >
