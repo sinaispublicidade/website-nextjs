@@ -20,7 +20,7 @@ export const Services: React.FC = () => (
         {services.map(({ key, icon, title, desc, link }) => (
           <article
             key={key}
-            className="bg-sinais-darkblue hover:bg-sinais-darkblue/60 flex flex-col rounded-lg p-8 text-white transition-colors md:p-11"
+            className="bg-sinais-darkblue hover:bg-sinais-darkblue/60 relative flex flex-col rounded-lg p-8 text-white transition-colors md:p-11"
           >
             <Image src={icon} alt={title} width={54} height={54} />
             <h3 className="mt-4 mb-6 text-xl font-bold text-white xl:text-2xl">
@@ -31,7 +31,7 @@ export const Services: React.FC = () => (
 
             <Button.Outline
               href={link}
-              className="mt-auto w-full justify-between"
+              className="stretched-link mt-auto w-full justify-between"
               plusIcon
             >
               Quero saber mais
