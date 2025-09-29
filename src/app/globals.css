@@ -73,6 +73,11 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+.stretched-link::after {
+  content: "";
+  @apply z-10 absolute inset-0 bg-transparent pointer-events-auto;
+}
+
 .embla__viewport {
   @apply mx-auto max-w-4xl;
   overflow: hidden;
