@@ -16,7 +16,6 @@ export const BUTTON_BASE_STYLE = [
   'transition-colors',
   'text-white',
   'focus:outline-none',
-  'relative',
 ].join(' ')
 
 export const BUTTON_STYLES = {
