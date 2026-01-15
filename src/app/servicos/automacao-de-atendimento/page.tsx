@@ -22,13 +22,13 @@ export default function Page() {
               cliente.
             </p>
           </div>
-          <Forms.About />
+          <Forms.Service />
         </div>
       </div>
 
       <div className="mx-auto grid max-w-sm gap-4 px-6 py-11 sm:container sm:grid-cols-2 md:py-20 lg:grid-cols-4">
         <div className="col-span-full mb-4 md:mb-8">
-          <h2 className="mx-auto max-w-[800px] text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
+          <h2 className="mx-auto max-w-200 text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
             Automatize seu processo de atendimento e{' '}
             <span className="text-sinais-blue">escale suas vendas</span>:
           </h2>
