@@ -14,7 +14,7 @@ export const BannerHeroAbout: React.FC = () => {
         className="user-select-none pointer-events-none absolute inset-0 h-full w-full object-cover"
         priority
       />
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-8 md:grid md:grid-cols-10 md:items-end md:px-12">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-8 md:grid md:grid-cols-10 md:px-12">
         <div className="w-full max-w-md font-sans sm:max-w-lg sm:pb-8 md:col-span-5 lg:col-span-6 lg:max-w-2xl">
           <h1 className="text-2xl font-bold sm:text-3xl xl:text-[40px]">
             Há mais de 15 anos gerando resultados reais
@@ -48,7 +48,7 @@ export const BannerHeroAbout: React.FC = () => {
             alt="Young Executive"
             width={600}
             height={600}
-            className="pointer-events-none object-contain select-none sm:max-w-[400px] lg:max-w-full"
+            className="pointer-events-none max-w-2xs object-contain select-none sm:max-w-100 lg:max-w-full"
             priority
           />
         </div>

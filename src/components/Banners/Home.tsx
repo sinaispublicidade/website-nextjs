@@ -1,18 +1,17 @@
 import React from 'react'
-import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
 
 export const BannerHeroHome: React.FC = () => {
   return (
     <>
-      <Image
-        src="/assets/banners/banner-hero--home.png"
-        alt="Banner Hero"
-        width={1920}
-        height={1080}
+      <video
+        src="/assets/video-hero--home.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover select-none"
-        priority
       />
       <div className="flex flex-col items-center justify-center p-10 font-sans sm:p-40">
         <h1 className="text-center text-4xl font-bold sm:text-5xl">

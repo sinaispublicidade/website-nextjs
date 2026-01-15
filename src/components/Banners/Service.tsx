@@ -13,7 +13,7 @@ export const BannerHeroService: React.FC<BannerHeroServiceProps> = ({
   img,
 }) => {
   return (
-    <div className="mx-auto flex max-w-[1360px] flex-col items-center justify-between gap-4 px-8 sm:grid sm:grid-cols-5 md:px-12">
+    <div className="mx-auto flex max-w-340 flex-col items-center justify-between gap-4 px-8 sm:mt-10 sm:grid sm:grid-cols-5 md:px-12">
       <div className="w-full max-w-md sm:col-span-3 sm:max-w-lg sm:pb-8 lg:max-w-2xl">
         <h1 className="text-2xl font-bold sm:text-3xl lg:text-[40px]">
           {title}
@@ -66,7 +66,7 @@ export const BannerHeroService: React.FC<BannerHeroServiceProps> = ({
           alt={title}
           width={600}
           height={600}
-          className="pointer-events-none -mb-6 size-[220px] object-contain select-none sm:mb-0 sm:size-auto lg:-mb-13"
+          className="pointer-events-none -mb-6 size-55 object-contain select-none sm:mb-0 sm:size-auto lg:-mb-13"
           priority
         />
       </div>
