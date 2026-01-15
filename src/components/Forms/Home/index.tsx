@@ -1,6 +1,7 @@
 'use client'
 import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useHookFormMask } from 'use-mask-input'
 
 import { Forms } from '@/types'
 
@@ -21,6 +22,10 @@ export const HomeForm: React.FC = () => {
     reset,
   } = useForm<Forms.Data.Home>({
     resolver: HomeFormResolver,
+  })
+  const registerWithMask = useHookFormMask(register)
+  const registerPhoneMask = registerWithMask('telefone', '(99) [9]9999-9999', {
+    showMaskOnHover: false,
   })
 
   const onSubmit = useCallback(
@@ -51,7 +56,7 @@ export const HomeForm: React.FC = () => {
         </h2>
 
         <form
-          className="mt-9 grid w-full max-w-[1200px] gap-4 sm:mt-11 sm:grid-cols-10 md:mt-20"
+          className="mt-9 grid w-full max-w-300 gap-4 sm:mt-11 sm:grid-cols-10 md:mt-20"
           onSubmit={handleSubmit(onSubmit)}
           noValidate
         >
@@ -73,7 +78,7 @@ export const HomeForm: React.FC = () => {
           <div className="sm:col-span-4">
             <Input
               placeholder="Telefone*"
-              registration={register('telefone')}
+              registration={registerPhoneMask}
               error={errors.telefone}
             />
           </div>
