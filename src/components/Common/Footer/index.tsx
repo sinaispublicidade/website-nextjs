@@ -3,15 +3,17 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 export const Footer: React.FC = () => (
   <footer className="container mx-auto px-6 pt-8 font-sans md:pt-12">
-    <div className="flex flex-col items-center gap-8 border-t-2 border-white/40 py-8 text-center md:flex-row md:items-start md:justify-between md:gap-4 md:pt-4 md:text-left">
-      <div className="text-sm text-white">Todos os direitos reservados ©</div>
+    <div className="flex flex-col items-center gap-8 border-t-2 border-white/40 py-8 text-center md:flex-row md:flex-wrap md:items-start md:justify-between md:gap-4 md:pt-4 md:text-left">
+      <div className="lg text-sm text-white md:order-1 md:w-full md:text-center lg:order-0 lg:w-auto">
+        Todos os direitos reservados ©
+      </div>
 
-      <address className="text-sm text-white not-italic md:-order-1">
+      <address className="text-sm text-white not-italic lg:-order-1">
         <strong>SINAIS Publicidade e Propaganda</strong>
         <br />
-        R. Coronel Quirino, 1373
+        Rua Comendador Tórlogo Dauntre, 74 - Sala 1207
         <br />
-        Cambuí - Campinas (SP)
+        Cambuí, Campinas - SP, 13025-270
       </address>
 
       <div className="flex justify-center gap-3 md:gap-2">
