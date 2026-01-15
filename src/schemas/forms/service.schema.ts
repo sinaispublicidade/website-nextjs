@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { validationMessages } from '@/lib/validation-messages'
 
-export const AdsFormSchema = z.object({
+export const ServiceFormSchema = z.object({
   nome: z.string().min(2, validationMessages.required.default),
   email: z.email(validationMessages.invalid.email),
   telefone: z
@@ -13,9 +13,9 @@ export const AdsFormSchema = z.object({
     .refine((val) => validatePhone(val), {
       message: validationMessages.invalid.phone,
     }),
-  faturamento: z.string().min(2, validationMessages.required.default),
-  tipoServico: z.string().min(2, validationMessages.required.default),
+  faturamento: z.string(),
+  produtoServico: z.string(),
   tiporRetorno: z.string(),
 })
 
-export const AdsFormResolver = zodResolver(AdsFormSchema)
+export const ServiceFormResolver = zodResolver(ServiceFormSchema)
