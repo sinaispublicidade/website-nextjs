@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #000000;
+  --background: #000000;
+  --foreground: #FFFFFF;
   --whatsapp: #5CDE35;
   --sinais-blue: #027BFF;
   --sinais-darkblue: #00356F;
@@ -22,13 +23,6 @@
   --color-sinais-black: var(--sinais-black);
   --color-sinais-error: var(--sinais-error);
   --font-sans: var(--font-helvetica);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #FFFFFF;
-  }
 }
 
 @keyframes pulse-shadow {
