@@ -2,9 +2,7 @@ import type { NextConfig } from 'next'
 import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin'
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true, // This will ignore ESLint errors during the build process
-  },
+  reactCompiler: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.plugins = [...config.plugins, new PrismaPlugin()]
@@ -12,6 +10,10 @@ const nextConfig: NextConfig = {
 
     return config
   },
+  // Provide an explicit (even empty) turbopack config so Next.js
+  // doesn't error when custom webpack is present. This keeps Turbopack
+  // enabled while allowing backward-compatible webpack usage.
+  turbopack: {},
 }
 
 export default nextConfig
