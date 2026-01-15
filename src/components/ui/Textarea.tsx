@@ -17,12 +17,12 @@ export const Textarea: React.FC<TextareaProps> = ({
     )}
     <textarea
       className={cn(
-        'focus:ring-sinais-blue h-28 w-full rounded-xl border bg-transparent px-4 py-3 text-white placeholder:text-white focus:ring-2',
-        error ? 'border-sinais-error' : 'border-white',
+        'focus-visible:border-sinais-black focus-visible:ring-sinais-black/50 aria-invalid:ring-sinais-error/20 aria-invalid:border-sinais-error h-28 w-full rounded-xl border bg-transparent px-4 py-3 text-white outline-none placeholder:text-white focus:ring-2 focus-visible:ring-3 disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-white',
         className
       )}
       {...registration}
       {...props}
+      aria-invalid={!!error || props['aria-invalid']}
     />
     {error && (
       <span className="text-sinais-error text-sm">{error.message}</span>
