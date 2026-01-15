@@ -1,4 +1,5 @@
 import { PrismaClient } from '@/generated/prisma'
+import { PrismaMariaDb } from '@prisma/adapter-mariadb'
 
 if (!process.env.DATABASE_URL) {
   throw new Error(
@@ -6,14 +7,18 @@ if (!process.env.DATABASE_URL) {
   )
 }
 
-const prismaClientSingleton = () => new PrismaClient()
-
-declare global {
-  var prisma: ReturnType<typeof prismaClientSingleton> | undefined
+const globalForPrisma = global as unknown as {
+  prisma: PrismaClient
 }
 
-const prisma = global.prisma ?? prismaClientSingleton()
+const adapter = new PrismaMariaDb(process.env.DATABASE_URL)
 
-if (process.env.NODE_ENV !== 'production') global.prisma = prisma
+const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    adapter,
+  })
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
 
 export default prisma
