@@ -12,7 +12,7 @@ export const Stats: React.FC = () => (
 
       <div className="">
         <h4 className="text-sinais-blue text-2xl font-bold lg:text-3xl">
-          Mais de 200 milhões em negócios gerados
+          Mais de 800 milhões em negócios gerados
         </h4>
         <p className="mt-3 lg:text-xl">
           Cases de sucesso que mostram o impacto das nossas estratégias em
