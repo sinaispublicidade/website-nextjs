@@ -3,9 +3,9 @@ import { Forms } from '@/types'
 
 import prisma from '@/lib/prisma'
 
-import { AboutFormSchema } from '@/schemas/forms/about.schema'
-import { AdsFormSchema } from '@/schemas/forms/ads.schema'
+import { BudgetFormSchema } from '@/schemas/forms/budget.schema'
 import { HomeFormSchema } from '@/schemas/forms/home.schema'
+import { ServiceFormSchema } from '@/schemas/forms/service.schema'
 
 async function handleForm<T>({
   schema,
@@ -35,18 +35,18 @@ export async function handleHomeForm(data: Forms.Data.Home) {
   })
 }
 
-export async function handleAboutForm(data: Forms.Data.About) {
-  return handleForm<Forms.Data.About>({
-    schema: AboutFormSchema,
-    prismaModel: prisma.aboutContact,
+export async function handleServiceForm(data: Forms.Data.Service) {
+  return handleForm<Forms.Data.Service>({
+    schema: ServiceFormSchema,
+    prismaModel: prisma.serviceContact,
     data,
   })
 }
 
-export async function handleAdsForm(data: Forms.Data.Ads) {
-  return handleForm<Forms.Data.Ads>({
-    schema: AdsFormSchema,
-    prismaModel: prisma.adsContact,
+export async function handleBudgetForm(data: Forms.Data.Budget) {
+  return handleForm<Forms.Data.Budget>({
+    schema: BudgetFormSchema,
+    prismaModel: prisma.budgetContact,
     data,
   })
 }
