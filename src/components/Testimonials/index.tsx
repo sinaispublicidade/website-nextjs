@@ -1,8 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
+import { useInView } from 'react-intersection-observer'
 
 import { usePrevNextButtons } from '@/hooks/usePrevNextButtons'
 import { testimonials as testimonialsMock } from '@/mocks'
@@ -10,8 +11,12 @@ import { testimonials as testimonialsMock } from '@/mocks'
 import { NextButton, PrevButton } from './Nav'
 
 export const Testimonials: React.FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ playOnInit: false }),
+  ])
   const [testimonials] = useState(testimonialsMock as typeof testimonialsMock)
+
+  if (testimonials.length === 0) return null
 
   const {
     prevBtnDisabled,
@@ -20,8 +25,25 @@ export const Testimonials: React.FC = () => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi)
 
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  })
+
+  useEffect(() => {
+    if (testimonials.length <= 1) return
+    if (!emblaApi) return
+    const autoplay = emblaApi.plugins().autoplay
+
+    if (inView) autoplay.play()
+  }, [emblaApi, inView])
+
   return (
-    <section className="bg-black">
+    <section
+      className="group bg-black"
+      data-controls={testimonials.length > 1}
+      ref={ref}
+    >
       <div className="container mx-auto px-6 py-11 md:py-20">
         <h2 className="mx-auto max-w-xs text-center text-2xl font-bold sm:max-w-sm sm:text-3xl md:max-w-lg md:text-[40px]">
           O que{' '}
@@ -56,7 +78,7 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
 
-          <div className="absolute top-16 left-0 z-10 flex w-full -translate-y-1/2 justify-between md:top-1/2">
+          <div className="absolute top-16 left-0 z-10 w-full -translate-y-1/2 justify-between group-data-[controls=false]:hidden group-data-[controls=true]:flex md:top-1/2">
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}

@@ -1,9 +1,9 @@
-import { AboutForm } from './About'
-import { AdsForm } from './Ads'
+import { BudgetForm } from './Budget'
 import { HomeForm } from './Home'
+import { ServiceForm } from './Service'
 
 export const Forms = {
-  About: AboutForm,
-  Ads: AdsForm,
+  Budget: BudgetForm,
   Home: HomeForm,
+  Service: ServiceForm,
 }

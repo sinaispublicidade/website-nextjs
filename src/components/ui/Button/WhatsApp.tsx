@@ -2,12 +2,12 @@ import React from 'react'
 import { BsWhatsapp } from 'react-icons/bs'
 
 import { Button } from '@/types'
+import { env } from '@/env'
 
 import { cn } from '@/lib/utils'
 import { BUTTON_STYLES } from '@/styles'
 
-const whatsappNumber =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5511999999999'
+const whatsappNumber = env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5511999999999'
 const defaultHref = `https://wa.me/${whatsappNumber}`
 
 export const ButtonWhatsApp: React.FC<Button.WhatsApp> = ({

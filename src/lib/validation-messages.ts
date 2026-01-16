@@ -5,6 +5,7 @@ export const validationMessages = {
     number: 'Número obrigatório.',
     email: 'E-mail obrigatório.',
     date: 'Data obrigatória.',
+    select: 'Selecione uma opção.',
   },
   invalid: {
     default: 'Campo inválido.',

@@ -12,8 +12,8 @@ export const BUTTON_BASE_STYLE = [
   'rounded-xl',
   'px-9',
   'py-3',
-  'font-medium',
-  'transition-colors',
+  'font-bold',
+  'transition-[background-color,color,box-shadow]',
   'text-white',
   'focus:outline-none',
 ].join(' ')

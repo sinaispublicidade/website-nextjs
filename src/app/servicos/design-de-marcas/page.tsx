@@ -1,5 +1,7 @@
 import { BUTTON_STYLES } from '@/styles'
 
+import { portfolioDesignMarcas } from '@/mocks'
+
 import { BannerHero } from '@/components/Common/BannerHero'
 import { Forms } from '@/components/Forms'
 import { Portfolio } from '@/components/Portfolio'
@@ -26,13 +28,13 @@ export default function Page() {
               credibilidade, gerar impacto e se conectar com seu público.
             </p>
           </div>
-          <Forms.About />
+          <Forms.Service />
         </div>
       </div>
 
       <div className="mx-auto grid max-w-sm gap-4 px-6 py-11 sm:container sm:grid-cols-2 md:py-20 lg:grid-cols-4">
         <div className="col-span-full mb-4 md:mb-8">
-          <h2 className="mx-auto max-w-[800px] text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
+          <h2 className="mx-auto max-w-200 text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
             Criamos identidade que{' '}
             <span className="text-sinais-blue">marca e geram resultados</span>:
           </h2>
@@ -72,7 +74,7 @@ export default function Page() {
       <h2 className="px-6 pb-8 text-center text-2xl font-bold sm:text-3xl md:pb-12 md:text-[40px]">
         Veja algumas marcas já criadas por nós:
       </h2>
-      <Portfolio quantity={3} />
+      <Portfolio portfolio={portfolioDesignMarcas} />
     </>
   )
 }

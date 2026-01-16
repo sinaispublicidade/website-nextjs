@@ -1,14 +1,14 @@
-import { AboutFormSchema } from '@/schemas/forms/about.schema'
-import { AdsFormSchema } from '@/schemas/forms/ads.schema'
+import { BudgetFormSchema } from '@/schemas/forms/budget.schema'
 import { HomeFormSchema } from '@/schemas/forms/home.schema'
+import { ServiceFormSchema } from '@/schemas/forms/service.schema'
 
 export declare namespace Forms {
   type SubmitStatus = 'success' | 'error' | null
 
   declare namespace Data {
     type Home = z.infer<typeof HomeFormSchema>
-    type About = z.infer<typeof AboutFormSchema>
-    type Ads = z.infer<typeof AdsFormSchema>
+    type Budget = z.infer<typeof BudgetFormSchema>
+    type Service = z.infer<typeof ServiceFormSchema>
   }
 
   declare namespace Handle {

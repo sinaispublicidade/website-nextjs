@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { portfolioHome } from '@/mocks'
+
 import { Stats } from '@/components/Stats'
 import { Services } from '@/components/Services'
 import { Clients } from '@/components/Clients'
@@ -24,7 +26,7 @@ export default function Home() {
           feitos pela SINAIS:
         </h2>
 
-        <Portfolio className="-mx-6 mt-9 md:mt-11" quantity={9} />
+        <Portfolio className="-mx-6 mt-9 md:mt-11" portfolio={portfolioHome} />
       </section>
 
       <Testimonials />

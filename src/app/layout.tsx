@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
+import { GoogleTagManager } from '@next/third-parties/google'
 
-import fonts from '@/lib/fonts'
-import { cn } from '@/lib/utils'
+import { env } from '@/env'
 
 import { Header } from '@/components/Common/Header'
 import { Footer } from '@/components/Common/Footer'
@@ -13,17 +13,26 @@ export const metadata: Metadata = {
   description: 'Sua nova agência de propaganda e marketing.',
 }
 
+function GTMTag() {
+  if (env.NODE_ENV !== 'production') return null
+  if (!env.NEXT_PUBLIC_GTM_ID) return null
+
+  return <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br" className="dark">
-      <body className={cn(fonts.HelveticaNeue.variable, 'antialiased')}>
+    <html lang="pt-br">
+      <GTMTag />
+
+      <body className="bg-black font-sans text-white">
         <Header />
 
-        <main className="w-full font-sans text-white">{children}</main>
+        <main className="w-full">{children}</main>
 
         <Footer />
       </body>

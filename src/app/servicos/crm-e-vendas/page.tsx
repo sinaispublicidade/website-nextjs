@@ -14,20 +14,21 @@ export default function Page() {
       <BannerHero />
 
       <div className="bg-sinais-blue sm:px-6 sm:py-11 md:py-20">
-        <div className="container mx-auto grid items-center sm:gap-6 md:grid-cols-2 lg:gap-10">
-          <p className="px-6 py-10 text-lg font-medium sm:p-0 md:max-w-xl md:text-xl lg:text-2xl">
-            Na SINAIS, cada projeto é construído com foco em métricas e
-            performance. Não entregamos apenas campanhas, mas resultados
-            concretos que fortalecem marcas, aumentam vendas e geram impacto
-            direto nos negócios.
-          </p>
-          <Forms.About />
+        <div className="container mx-auto grid items-center sm:gap-6 lg:grid-cols-2 lg:gap-10">
+          <div className="px-6 py-10 sm:py-0">
+            <p className="mx-auto text-2xl font-bold sm:text-3xl md:text-[40px]">
+              Com um CRM bem implantado, sua equipe ganha eficiência, sua
+              comunicação se torna mais estratégica e seus resultados em vendas
+              crescem de forma escalável.
+            </p>
+          </div>
+          <Forms.Service />
         </div>
       </div>
 
       <div className="mx-auto grid max-w-sm gap-4 px-6 py-11 sm:container sm:grid-cols-2 md:py-20 lg:grid-cols-4">
         <div className="col-span-full mb-4 md:mb-8">
-          <h2 className="mx-auto max-w-[800px] text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
+          <h2 className="mx-auto max-w-200 text-center text-2xl font-bold sm:text-3xl md:text-[40px]">
             Benefícios de ter um site{' '}
             <span className="text-sinais-blue">bem estrutura</span> para seu
             negócio:

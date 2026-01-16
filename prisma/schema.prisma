@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider      = "prisma-client-js"
   output        = "../src/generated/prisma"
@@ -13,7 +7,6 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
 }
 
 model HomeContact {
@@ -29,28 +22,30 @@ model HomeContact {
   @@map("form_home")
 }
 
-model AboutContact {
-  id           String   @id @default(uuid())
-  nome         String
-  email        String
-  telefone     String
-  siteAtual    String   @map("site_atual")
-  tipoServico  String   @map("tipo_servico")
-  tiporRetorno String?  @map("tipo_retorno")
-  createdAt    DateTime @default(now())
+model ServiceContact {
+  id             String   @id @default(uuid())
+  nome           String
+  email          String
+  telefone       String
+  faturamento    String?
+  produtoServico String?  @map("produto_servico")
+  tipoServico    String?  @map("tipo_servico")
+  createdAt      DateTime @default(now())
 
-  @@map("form_about")
+  @@map("form_services")
 }
 
-model AdsContact {
+model BudgetContact {
   id           String   @id @default(uuid())
   nome         String
   email        String
   telefone     String
-  faturamento  String
+  cidadeEstado String   @map("cidade_estado")
+  empresa      String
+  ramoAtuacao  String   @map("ramo_atuacao")
   tipoServico  String   @map("tipo_servico")
-  tiporRetorno String?  @map("tipo_retorno")
+  demanda      String
   createdAt    DateTime @default(now())
 
-  @@map("form_ads")
+  @@map("form_budget")
 }

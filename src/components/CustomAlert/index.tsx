@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 
 import { Alert } from '@/components/ui/Alert'
@@ -16,7 +14,7 @@ const alertMessages = {
 
 export const CustomAlert: React.FC<CustomAlertProps> = ({
   type,
-  timeout = 5000,
+  timeout,
   ...props
 }) => {
   if (!type) return null
