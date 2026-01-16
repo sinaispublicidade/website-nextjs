@@ -8,12 +8,12 @@ export default function About() {
     <>
       <div className="mx-auto grid max-w-sm gap-4 px-6 py-11 sm:container sm:grid-cols-2 md:py-20 lg:grid-cols-4">
         <Feature.About
-          strong="+100 clientes"
+          strong="+300 clientes"
           small="atendidos"
           text={`Geração de leads\n\nExperiência consolidada em diferentes segmentos do mercado.`}
         />
         <Feature.About
-          strong="+200 milhões"
+          strong="+800 milhões"
           small="em resultados"
           text="Estratégias que geraram crescimento real e mensurável."
         />
@@ -46,7 +46,7 @@ export default function About() {
             concretos que fortalecem marcas, aumentam vendas e geram impacto
             direto nos negócios.
           </p>
-          <Forms.About />
+          <Forms.Service />
         </div>
       </div>
 
