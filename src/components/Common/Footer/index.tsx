@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
@@ -16,35 +17,43 @@ export const Footer: React.FC = () => (
         Cambuí, Campinas - SP, 13025-270
       </address>
 
-      <div className="flex justify-center gap-3 md:gap-2">
-        <p>Redes sociais:</p>
-        <a
-          href="https://www.facebook.com/agenciasinais"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          className="hover:text-sinais-blue text-2xl text-white transition-colors"
+      <div className="flex flex-col items-center gap-2 md:items-end">
+        <div className="flex justify-center gap-3 md:gap-2">
+          <p>Redes sociais:</p>
+          <a
+            href="https://www.facebook.com/agenciasinais"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-sinais-blue text-2xl text-white transition-colors"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://www.instagram.com/agenciasinais"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-sinais-blue text-2xl text-white transition-colors"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/agencia-sinais"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:text-sinais-blue text-2xl text-white transition-colors"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
+        <Link
+          href="/privacidade"
+          className="hover:text-sinais-blue transition-colors"
         >
-          <FaFacebook />
-        </a>
-        <a
-          href="https://www.instagram.com/agenciasinais"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="hover:text-sinais-blue text-2xl text-white transition-colors"
-        >
-          <FaInstagram />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/agencia-sinais"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="hover:text-sinais-blue text-2xl text-white transition-colors"
-        >
-          <FaLinkedin />
-        </a>
+          Política de Privacidade
+        </Link>
       </div>
     </div>
   </footer>
