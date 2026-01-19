@@ -25,6 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <link rel="icon" href="/sinais-icon.svg" type="image/svg+xml" />
+
       <GTMTag />
 
       <body className="bg-black font-sans text-white">
