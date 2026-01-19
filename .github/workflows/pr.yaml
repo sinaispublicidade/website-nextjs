@@ -1,0 +1,64 @@
+name: PR Tests
+
+on:
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: test
+          MYSQL_PASSWORD: test
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Instalar dependências
+        run: pnpm install --frozen-lockfile
+
+      - name: Verificar tipos TypeScript
+        run: pnpm run type-check || pnpm exec tsc --noEmit
+        continue-on-error: true
+
+      - name: Setup ambiente de teste
+        run: |
+          cp .env.example .env.test || echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env.test
+
+      - name: Gerar Prisma Client
+        run: pnpm exec prisma generate
+
+      - name: Executar migrations
+        run: pnpm exec prisma migrate deploy
+        env:
+          DATABASE_URL: mysql://test:test@localhost:3306/test_db
+
+      - name: Build Next.js
+        run: pnpm run build
+        env:
+          DATABASE_URL: mysql://test:test@localhost:3306/test_db
