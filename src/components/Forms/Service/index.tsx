@@ -39,7 +39,6 @@ export const ServiceForm: React.FC<{ theme?: 'darkblue' | 'black' }> = ({
       faturamento: '',
       produtoServico: '',
       tipoServico: currentService || 'Não informado',
-      tiporRetorno: '',
     },
   })
   const registerWithMask = useHookFormMask(register)
@@ -99,12 +98,6 @@ export const ServiceForm: React.FC<{ theme?: 'darkblue' | 'black' }> = ({
         placeholder="Qual seu produto/serviço?*"
         registration={register('produtoServico')}
         error={errors.produtoServico}
-        className="focus-visible:border-white focus-visible:ring-white/50"
-      />
-      <Input
-        placeholder="Como prefere o retorno?"
-        registration={register('tiporRetorno')}
-        error={errors.tiporRetorno}
         className="focus-visible:border-white focus-visible:ring-white/50"
       />
 
