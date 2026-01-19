@@ -2,17 +2,17 @@ import { IPortfolio } from '@/types'
 
 export const portfolioHome: IPortfolio[] = [
   {
-    name: 'Anuncio de Revista',
+    name: 'Anúncio de Revista',
     image: '/assets/portfolio/home/Anuncio-de-Revista.jpg',
     link: '/servicos/marketing-para-varejo',
   },
   {
-    name: 'Catalogo B2B',
+    name: 'Catálogo B2B',
     image: '/assets/portfolio/home/Catalogo-B2B.jpg',
     link: '/servicos/marketing-para-varejo',
   },
   {
-    name: 'Comunicacao EVOLASER',
+    name: 'Comunicação EVOLASER',
     image: '/assets/portfolio/home/Comunicacao-EVOLASER.jpg',
     link: '/servicos/marketing-para-varejo',
   },
@@ -22,22 +22,22 @@ export const portfolioHome: IPortfolio[] = [
     link: '/servicos/design-de-marcas',
   },
   {
-    name: 'Material didatico',
+    name: 'Material didático',
     image: '/assets/portfolio/home/Material-didatico.jpg',
     link: '/servicos/design-de-marcas',
   },
   {
-    name: 'Padrao de marca',
+    name: 'Padrão de marca',
     image: '/assets/portfolio/home/Padrao-de-marca.jpg',
     link: '/servicos/design-de-marcas',
   },
   {
-    name: 'Campanha de captacao',
+    name: 'Campanha de captação',
     image: '/assets/portfolio/home/Campanha-de-captacao.jpg',
     link: '/servicos/marketing-para-varejo',
   },
   {
-    name: 'Comunicacao B2B',
+    name: 'Comunicação B2B',
     image: '/assets/portfolio/home/Comunicacao-B2B.png',
     link: '/servicos/marketing-para-varejo',
   },
@@ -47,12 +47,12 @@ export const portfolioHome: IPortfolio[] = [
     link: '/servicos/design-de-embalagens',
   },
   {
-    name: 'Lancamento Imobiliario',
+    name: 'Lançamento Imobiliário',
     image: '/assets/portfolio/home/Lancamento-Imobiliario.jpg',
     link: '/servicos/inbound-rd-station',
   },
   {
-    name: 'Padrao de Embalagens',
+    name: 'Padrão de Embalagens',
     image: '/assets/portfolio/home/Padrao-de-Embalagens.jpg',
     link: '/servicos/design-de-embalagens',
   },
