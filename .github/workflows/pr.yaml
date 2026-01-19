@@ -39,16 +39,15 @@ jobs:
           node-version: '22'
           cache: 'pnpm'
 
+      - name: Setup ambiente de teste
+        run: echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env.test
+
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
 
       - name: Verificar tipos TypeScript
         run: pnpm run type-check || pnpm exec tsc --noEmit
         continue-on-error: true
-
-      - name: Setup ambiente de teste
-        run: |
-          cp .env.example .env.test || echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env.test
 
       - name: Gerar Prisma Client
         run: pnpm exec prisma generate
