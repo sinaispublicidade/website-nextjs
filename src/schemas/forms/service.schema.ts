@@ -15,6 +15,7 @@ export const ServiceFormSchema = z.object({
     }),
   faturamento: z.union([z.string(), z.number()]),
   produtoServico: z.string(),
+  tipoServico: z.string().optional(),
 })
 
 export const ServiceFormResolver = zodResolver(ServiceFormSchema)
