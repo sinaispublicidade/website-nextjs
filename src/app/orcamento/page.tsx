@@ -1,7 +1,13 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+
+import { metadataGenerator } from '@/lib/metadata'
+
 import { Testimonials } from '@/components/Testimonials'
 import { Partners } from '@/components/Common/Partners'
 import { Forms } from '@/components/Forms'
-import Image from 'next/image'
+
+export const metadata: Metadata = metadataGenerator('budget')
 
 export default function BudgetPage() {
   return (

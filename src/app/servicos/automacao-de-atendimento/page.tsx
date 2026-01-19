@@ -1,3 +1,6 @@
+import type { Metadata } from 'next'
+
+import { metadataGenerator } from '@/lib/metadata'
 import { BUTTON_STYLES } from '@/styles'
 
 import { BannerHero } from '@/components/Common/BannerHero'
@@ -5,6 +8,8 @@ import { Forms } from '@/components/Forms'
 import { Feature } from '@/components/Features'
 import { Button } from '@/components/ui/Button'
 import { Banner } from '@/components/Banners'
+
+export const metadata: Metadata = metadataGenerator('agent')
 
 export default function Page() {
   const pathname = '/assets/services/automacao-de-atendimento'

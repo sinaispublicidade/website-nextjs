@@ -2,16 +2,14 @@ import type { Metadata } from 'next'
 import { GoogleTagManager } from '@next/third-parties/google'
 
 import { env } from '@/env'
+import { metadataGenerator } from '@/lib/metadata'
 
 import { Header } from '@/components/Common/Header'
 import { Footer } from '@/components/Common/Footer'
 
 import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'SINAIS Publicidade',
-  description: 'Sua nova agência de propaganda e marketing.',
-}
+export const metadata: Metadata = metadataGenerator('home')
 
 function GTMTag() {
   if (env.NODE_ENV !== 'production') return null
