@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 import { env } from '@/env'
 
-const baseUrl = env.NEXT_PUBLIC_BASE_URL_XML
+const baseUrl = env.NEXT_PUBLIC_BASE_URL_SEO
 
 export default function robots(): MetadataRoute.Robots {
   return {
