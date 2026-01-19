@@ -1,10 +1,15 @@
+import type { Metadata } from 'next'
 import { RiCalendarScheduleLine } from 'react-icons/ri'
+
+import { metadataGenerator } from '@/lib/metadata'
 
 import { BannerHero } from '@/components/Common/BannerHero'
 import { Forms } from '@/components/Forms'
 import { Feature } from '@/components/Features'
 import { Button } from '@/components/ui/Button'
 import { Partners } from '@/components/Common/Partners'
+
+export const metadata: Metadata = metadataGenerator('ads')
 
 export default function Page() {
   const pathname = '/assets/services/trafego-e-performance'

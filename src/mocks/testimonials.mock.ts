@@ -15,7 +15,7 @@ export const testimonials: ITestimonial[] = [
   {
     image: '/assets/testimonials/testimonial-paula-rodrigues.jpg',
     author: 'Paula Rodrigues',
-    role: 'Coordenadora de Marketing - BAUMINAS',
+    role: 'Gerente de Marketing e Customer Service - BAUMINAS',
     text: 'A SINAIS é uma parceira estratégica da BAUMINAS há muitos anos. Atende todo o nosso grupo com soluções completas de comunicação, sempre com visão de marca, consistência e profundidade estratégica. Ter um parceiro como a SINAIS, com este know-how, é essencial para sustentar e evoluir nossas marcas.',
   },
   /* {

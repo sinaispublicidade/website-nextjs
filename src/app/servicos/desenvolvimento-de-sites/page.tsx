@@ -1,3 +1,6 @@
+import type { Metadata } from 'next'
+
+import { metadataGenerator } from '@/lib/metadata'
 import { BUTTON_STYLES } from '@/styles'
 
 import { portfolioDesenvolvimentoSites } from '@/mocks'
@@ -7,6 +10,8 @@ import { Forms } from '@/components/Forms'
 import { Portfolio } from '@/components/Portfolio'
 import { Feature } from '@/components/Features'
 import { Button } from '@/components/ui/Button'
+
+export const metadata: Metadata = metadataGenerator('web')
 
 export default function Page() {
   const pathname = '/assets/services/desenvolvimento-de-sites'

@@ -6,7 +6,7 @@ const envSchema = z.object({
   // DATABASE_URL: z.string(),
   NEXT_PUBLIC_GTM_ID: z.string().optional(),
   NEXT_PUBLIC_WHATSAPP_NUMBER: z.string().optional(),
-  NEXT_PUBLIC_BASE_URL_XML: z.url().default('http://localhost:3000'),
+  NEXT_PUBLIC_BASE_URL_SEO: z.url().default('http://localhost:3000'),
 })
 
 const _env = envSchema.safeParse(process.env)

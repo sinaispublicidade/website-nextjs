@@ -1,7 +1,13 @@
+import type { Metadata } from 'next'
+
+import { metadataGenerator } from '@/lib/metadata'
+
 import { Button } from '@/components/ui/Button'
 import { Feature } from '@/components/Features'
 import { Forms } from '@/components/Forms'
 import { Testimonials } from '@/components/Testimonials'
+
+export const metadata: Metadata = metadataGenerator('about')
 
 export default function About() {
   return (
