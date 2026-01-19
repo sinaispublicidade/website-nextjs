@@ -156,4 +156,17 @@ export const metadataMock: Record<string, IMetadata> = {
       'geração leads',
     ],
   },
+  privacy: {
+    url: '/privacidade',
+    title: 'Política de Privacidade e Proteção de Dados | SINAIS',
+    description:
+      'Conheça nossa Política de Privacidade e Proteção de Dados. Informações sobre como coletamos, usamos e protegemos seus dados pessoais conforme a LGPD.',
+    keyword: [
+      'política de privacidade',
+      'proteção de dados',
+      'LGPD',
+      'privacidade',
+      'política dados',
+    ],
+  },
 }
