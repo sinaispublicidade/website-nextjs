@@ -13,9 +13,8 @@ export const ServiceFormSchema = z.object({
     .refine((val) => validatePhone(val), {
       message: validationMessages.invalid.phone,
     }),
-  faturamento: z.string(),
+  faturamento: z.union([z.string(), z.number()]),
   produtoServico: z.string(),
-  tiporRetorno: z.string(),
 })
 
 export const ServiceFormResolver = zodResolver(ServiceFormSchema)
