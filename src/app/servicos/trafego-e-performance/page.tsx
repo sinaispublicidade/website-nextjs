@@ -7,7 +7,6 @@ import { BannerHero } from '@/components/Common/BannerHero'
 import { Forms } from '@/components/Forms'
 import { Feature } from '@/components/Features'
 import { Button } from '@/components/ui/Button'
-import { Partners } from '@/components/Common/Partners'
 
 export const metadata: Metadata = metadataGenerator('ads')
 
@@ -144,8 +143,6 @@ export default function Page() {
           <Button.WhatsApp className="mx-auto">Conversar Agora</Button.WhatsApp>
         </div>
       </div>
-
-      <Partners />
     </>
   )
 }
