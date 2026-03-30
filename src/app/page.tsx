@@ -9,7 +9,6 @@ import { Clients } from '@/components/Clients'
 import { Portfolio } from '@/components/Portfolio'
 import { Testimonials } from '@/components/Testimonials'
 import { Forms } from '@/components/Forms'
-import { Partners } from '@/components/Common/Partners'
 
 export const metadata: Metadata = metadataGenerator('home')
 
@@ -34,7 +33,6 @@ export default function Home() {
 
       <Testimonials />
       <Forms.Home />
-      <Partners />
     </>
   )
 }
