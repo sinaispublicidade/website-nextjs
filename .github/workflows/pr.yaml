@@ -38,7 +38,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Setup ambiente de teste
-        run: echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env.test
+        run: echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env
 
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
@@ -52,10 +52,6 @@ jobs:
 
       - name: Executar migrations
         run: pnpm exec prisma migrate deploy
-        env:
-          DATABASE_URL: mysql://test:test@localhost:3306/test_db
 
       - name: Build Next.js
         run: pnpm run build
-        env:
-          DATABASE_URL: mysql://test:test@localhost:3306/test_db
