@@ -29,15 +29,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+        uses: pnpm/action-setup@v5
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'pnpm'
+
+      - name: Setup ambiente de teste
+        run: echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env
 
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
@@ -46,19 +47,11 @@ jobs:
         run: pnpm run type-check || pnpm exec tsc --noEmit
         continue-on-error: true
 
-      - name: Setup ambiente de teste
-        run: |
-          cp .env.example .env.test || echo "DATABASE_URL=mysql://test:test@localhost:3306/test_db" > .env.test
-
       - name: Gerar Prisma Client
         run: pnpm exec prisma generate
 
       - name: Executar migrations
         run: pnpm exec prisma migrate deploy
-        env:
-          DATABASE_URL: mysql://test:test@localhost:3306/test_db
 
       - name: Build Next.js
         run: pnpm run build
-        env:
-          DATABASE_URL: mysql://test:test@localhost:3306/test_db
