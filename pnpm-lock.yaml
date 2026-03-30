@@ -79,6 +79,9 @@ importers:
       next:
         specifier: '>=16.1.5'
         version: 16.2.1(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      next-security:
+        specifier: ^1.1.1
+        version: 1.1.1
       react:
         specifier: 19.2.3
         version: 19.2.3
@@ -225,6 +228,10 @@ packages:
   '@babel/types@7.28.5':
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
+
+  '@bitauth/libauth@1.19.1':
+    resolution: {integrity: sha512-R524tD5VwOt3QRHr7N518nqTVR/HKgfWL4LypekcGuNQN8R4PWScvuRcRzrY39A28kLztMv+TJdiKuMNbkU1ug==}
+    engines: {node: '>=8.9'}
 
   '@chevrotain/cst-dts-gen@10.5.0':
     resolution: {integrity: sha512-lhmC/FyqQ2o7pGK4Om+hzuDrm9rhFYIJ/AXoQBeongmn870Xeb0L6oGEiuR8nohFNL5sMaQEJWCxr1oIVIVXrw==}
@@ -2163,6 +2170,10 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  next-security@1.1.1:
+    resolution: {integrity: sha512-KWyCd01I4V2TLigXjgGnfrB06njDTAEogDpiOdgF9xo55/CGka6pP2N4sHTXq6CNfMJWwRJwftAngkhhpFyWLg==}
+    engines: {node: '>=10'}
+
   next@16.2.1:
     resolution: {integrity: sha512-VaChzNL7o9rbfdt60HUj8tev4m6d7iC1igAy157526+cJlXOQu5LzsBXNT+xaJnTP/k+utSX5vMv7m0G+zKH+Q==}
     engines: {node: '>=20.9.0'}
@@ -2939,6 +2950,8 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+
+  '@bitauth/libauth@1.19.1': {}
 
   '@chevrotain/cst-dts-gen@10.5.0':
     dependencies:
@@ -4931,6 +4944,11 @@ snapshots:
   napi-postinstall@0.3.4: {}
 
   natural-compare@1.4.0: {}
+
+  next-security@1.1.1:
+    dependencies:
+      '@bitauth/libauth': 1.19.1
+      defu: 6.1.4
 
   next@16.2.1(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
