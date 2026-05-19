@@ -36,7 +36,6 @@ const securityHeaders: Parameters<typeof withSecurityHeaders>[0] = {
         'object-src': ["'none'"],
         'script-src': [
           "'self'",
-          "'unsafe-inline'",
           'https://www.googletagmanager.com',
         ],
         'script-src-attr': ["'none'"],
