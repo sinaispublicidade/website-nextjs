@@ -40,7 +40,6 @@ export const BudgetForm: React.FC = () => {
   const registerPhoneMask = registerWithMask('telefone', '(99) [9]9999-9999', {
     showMaskOnHover: false,
   })
-  console.log('getValues:', getValues())
 
   const onSubmit = useCallback(
     async (data: Forms.Data.Budget) => {

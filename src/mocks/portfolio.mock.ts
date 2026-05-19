@@ -67,7 +67,7 @@ export const portfolioDesenvolvimentoSites: IPortfolio[] = [
   {
     name: 'Ambientaly',
     image: '/assets/portfolio/desenvolvimento-de-sites/Ambientaly.png',
-    link: 'http://ambientaly.com',
+    link: 'https://ambientaly.com',
   },
   {
     name: 'Bauminas',
