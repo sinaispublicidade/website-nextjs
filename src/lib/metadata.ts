@@ -7,6 +7,9 @@ export const metadataGenerator = (key: string): Metadata => ({
   title: metadataMock[key].title,
   description: metadataMock[key].description,
   keywords: metadataMock[key].keyword,
+  verification: {
+    google: env.NEXT_PUBLIC_GOOGLE_VERIFICATION || '',
+  },
   metadataBase: new URL(
     `${env.NEXT_PUBLIC_BASE_URL_SEO}${metadataMock[key].url}`
   ),
